@@ -1,0 +1,38 @@
+﻿<Page x:Class="WpfChat.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfChat.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LoginPage">
+
+    <Grid>
+        <StackPanel>
+
+            <Image Source="pack://application:,,,/Images/chat_logo.png" Width="250" Height="200"/>
+            <Label Content="WPF Chat" FontSize="40" HorizontalAlignment="Center"/>
+            <DockPanel HorizontalAlignment="Center" Margin="0,30,0,0">
+
+                <StackPanel>
+                    <Label Content="Kullanıcı Adı" HorizontalAlignment="Center"/>
+                    <TextBox x:Name="userNameTextBox" Text="" Width="200" Height="25" VerticalContentAlignment="Center"/>
+                    <Button Click="btnClick" Content="Giriş !" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="200" Height="30" Margin="0,5,0,0">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=userNameTextBox , Path=Text.Length}" Value="0" >
+                                        <Setter Property="IsEnabled" Value="False"/>
+                                    </DataTrigger> 
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+
+
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Page>

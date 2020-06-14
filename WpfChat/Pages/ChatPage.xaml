@@ -1,0 +1,111 @@
+﻿<Page x:Class="WpfChat.Pages.ChatPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:converter="clr-namespace:WpfChat.Converters"
+      xmlns:local="clr-namespace:WpfChat.Converters"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ChatPage">
+    <Page.Resources>
+        <ResourceDictionary>
+            <converter:GonderenAdiToAlignmentConverter x:Key="GonderenToAlignment"/>
+            <converter:CountToEnabledConverter x:Key="CountToEnabled"/>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Grid.Column="0"  VerticalScrollBarVisibility="Auto" Background="#b6b8c3">
+            <StackPanel>
+            <TextBlock Text="Online Kullanıcılar" TextWrapping="Wrap" HorizontalAlignment="Center" Padding="0,10,0,10"/>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Stretch"/>
+                <ItemsControl ItemsSource="{Binding BaglananlarListesi}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel Margin="5">
+                            <Ellipse Width="15" Height="15" Fill="Green"/>
+                            <Label Content="{Binding}"/>
+                        </DockPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
+
+
+        <ScrollViewer Grid.Column="1" ScrollChanged="ListeDegisti" Margin="0,0,0,30" Background="#e8eaf6">
+            <ItemsControl  ItemsSource="{Binding GonderiList}" >
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                        <Border x:Name="mBorder" BorderBrush="Black" BorderThickness="0"  HorizontalAlignment="{Binding Gonderen,Converter={StaticResource GonderenToAlignment}}" Margin="10,5,10,10">
+                        <StackPanel>
+                                <Grid>
+                                    <Grid.Style>
+                                        <Style TargetType="Grid">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=mBorder , Path=HorizontalAlignment}" Value="Right">
+                                                    <Setter Property="Height" Value="0"></Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Grid.Style>
+                                    <TextBlock Text="{Binding Gonderen}"  TextDecorations="Underline" HorizontalAlignment="Center"/>
+                                </Grid>
+                                <TextBlock x:Uid="mesajTextBlock" Height="auto" TextWrapping="Wrap" Text="{Binding Ileti}"  MaxWidth="150" Padding="5">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=mBorder , Path=HorizontalAlignment}" Value="Right">
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </StackPanel>
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8,8,8,0"/>
+                                    <Setter Property="Background" Value="#d6d5d5"/>
+                                    
+                                    <Style.Triggers>
+                                        <Trigger Property="HorizontalAlignment" Value="Right">
+                                            <Setter Property="CornerRadius" Value="8,8,0,8"/>
+                                            <Setter Property="Background" Value="#1e8dff"/>
+                                            
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        </ScrollViewer>
+        <DockPanel Grid.Column="1" VerticalAlignment="Bottom" LastChildFill="True" >
+
+            <Button Content="Gönder" Width="80" Command="{Binding Path=GonderCommand}"   DockPanel.Dock="Right" Margin="0,0,5,10">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=mMessageContent , Path=Text.Length}" Value="0">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <TextBox x:Name="mMessageContent" Text="{Binding Path=TextIleti , Mode=TwoWay}" Width="auto" DockPanel.Dock="Left" Margin="0,0,0,10"/>
+            
+        </DockPanel>
+
+    </Grid>
+</Page>

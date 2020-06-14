@@ -1,0 +1,16 @@
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\bin\Debug\Server.exe.config
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\bin\Debug\Server.exe
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\bin\Debug\Server.pdb
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\bin\Debug\WpfChat.exe
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\bin\Debug\WpfChat.pdb
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\bin\Debug\WpfChat.exe.config
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\obj\Debug\ServerConsoleApp.csprojAssemblyReference.cache
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\obj\Debug\ServerConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\obj\Debug\ServerConsoleApp.csproj.CopyComplete
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\obj\Debug\Server.exe
+C:\Users\Baris\Desktop\mmmm\WpfChat\Server\obj\Debug\Server.pdb

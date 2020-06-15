@@ -4,5 +4,5 @@ MVVM tasarım deseni ve asenkron soket programlama ile oluşturulan localhost'ta
 
 #Ekran Görüntüleri
 
-![asd](https://hizliresim.com/AfVdYm][img]https://i.hizliresim.com/AfVdYm.jpg)
-![def](https://hizliresim.com/H3yCjX][img]https://i.hizliresim.com/H3yCjX.jpg)
+![asd](https://i.resimyukle.xyz/P8JQdU.jpg)
+![def](https://i.resimyukle.xyz/Ly7dx8.jpg)
